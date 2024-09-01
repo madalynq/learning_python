@@ -1,8 +1,4 @@
-name = "Angela"
-length = len(name)
-print(length)
-
-user_name = "pua"
-# using multiple words is fine, use underscore to separate, not spaces
-player1_user = "ralphie"
-# numbers can be used in variables, but it cannot be the first character of variable
+print("Welcome to BandStorm, the Band name generator that will help you brainstorm a name for your band!")
+city = input("What city did you grow up in? ")
+pet = input("What is the name of your favorite pet? ")
+print(city + " " + pet)
