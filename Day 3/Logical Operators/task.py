@@ -11,6 +11,8 @@ if height >= 120:
     elif age <= 18:
         bill = 7
         print("Youth tickets are $7.")
+    elif age >= 45 and age <= 55 :
+        print("Everything is going to be okay, have a free ride on us!")
     else:
         bill = 12
         print("Adult tickets are $12.")
@@ -23,3 +25,14 @@ if height >= 120:
 
 else:
     print("Sorry, you have to grow taller before you can ride.")
+
+
+
+
+##         notes
+# A and B --------> "and" means that both conditions must pass to be considered TRUE
+# A or B  --------> "or" means that only one condition must pass to be considered TRUE
+#         -------->            also, to be considered FALSE, both conditions must fail
+# not E   --------> "not" excludes a condition. what might normally pass as TRUE, if "not" is listed before
+#         -------->             a variable, it will return FALSE. Conversely, what might normally pass as
+#         -------->             FALSE, if "not" is listed before the variable, it will return TRUE
