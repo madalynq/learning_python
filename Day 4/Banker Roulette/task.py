@@ -11,3 +11,11 @@ elif randomizer == 4:
     print(friends[3])
 else:
     print(friends[4])
+
+
+## notes, cleaner code:
+
+# print(random.choice(friends))
+
+# random_index = random.randint(0,4)
+# print(friends[random_index])
