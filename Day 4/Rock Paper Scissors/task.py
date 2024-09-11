@@ -25,7 +25,7 @@ scissors = '''
 ---.__(___)
 '''
 
-user_choice = (input("What do you choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors.\n"))
+user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors.\n"))
 if user_choice == 0:
     print(rock)
 elif user_choice == 1:
@@ -63,6 +63,8 @@ elif user_choice == 2 and comp_choice == 1:
 elif user_choice == 2 and comp_choice == 2:
     print("Draw")
 
+##### i came up with this first, but it wasn't printing. i tried to run the code above and it also wasn't working.
+##### turns out i was forgetting to turn the user_input into an integer.
 
 if user_choice == 0:
     if comp_choice == 0:
