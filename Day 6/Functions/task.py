@@ -35,3 +35,43 @@ my_function()      ####"calling" the function
 
 ### for hurdle in range(0,6):
 ###     jump()
+
+########## INDENTATION IS IMPORTANT #########
+
+
+#### while loops ####
+
+#another way to simplify this code is to use a different kind of loop, a while loop. a while loop will continue
+#loooping through code until a condition has been met.
+# ex//     while something_is_true:
+#              do this
+#              do this
+
+#ex// instead of "for hurdle in range" loop above, create a variable to create condition, and then create while loop:
+
+#number_of_hurdles = 6
+#while number_of_hurdles > 0:
+#   jump()
+#   number_of_hurdles -= 1       -----> included in the loop, so that it will keep track of how many turns are left
+#                                -----> when the condition is met, or the number of hurdles is 0 (not >0), it will
+#                                -----> stop running the code for the loop
+
+#next challenge was to get the robot to keep jumping until it reached a randomized finish line.
+# ----> condition given: at_goal()
+
+#while at_goal() != True:           ---->another way of saying this in code: while not at_goal():
+#   jump()                           -----> however this flips the logic. while NOT at_goal would continue as a true
+#                                    -----> statement, and stop running the loop when the condition becomes false
+#                                    -----> or, when it reaches at_goal it becomes false because it is no longer NOT_at_goal
+#the code above is saying,
+# while at_goal is not equal to true (so it's false)
+# keep running loop. when it IS equal to true, the loop
+# stops as its condition has been met
+
+
+## while loops continue running until conditions have been met. infinite loops can be created, be careful of that.
+## for loops and loops with range are better for lists that need something specific done to each variable, while loops
+## are better for when you don't care too much about the numbers of the sequence and when you just need the console to
+## continue repeating a function for you until you reach a condition that you've set.
+## while loops are better for repeating functions
+## for loops are better for precision
