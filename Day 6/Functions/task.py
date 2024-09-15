@@ -17,3 +17,21 @@ my_function()      ####"calling" the function
 #   turn_left()
 #   turn_left()
 # turn_right()
+
+
+#created a "jump" function:
+
+# def jump():
+#   move()
+#   turn_left()
+#   move()
+#   turn_right()
+#   move()
+#   turn_right()
+#   move()
+#   turn_left()
+
+### challenge was to make the robot jump a hurdle, 6 times. and to simplify code as much as possible.(loops)
+
+### for hurdle in range(0,6):
+###     jump()
