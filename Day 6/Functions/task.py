@@ -75,3 +75,11 @@ my_function()      ####"calling" the function
 ## continue repeating a function for you until you reach a condition that you've set.
 ## while loops are better for repeating functions
 ## for loops are better for precision
+
+
+#### you can nest within loops.
+# while at_goal() != True:
+#     if wall_in_front() == TrueL
+#         jump()
+#     elif front_is_clear():
+#         move()
