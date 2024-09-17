@@ -83,3 +83,35 @@ my_function()      ####"calling" the function
 #         jump()
 #     elif front_is_clear():
 #         move()
+
+
+
+## MY code for escaping the maze:
+
+# def turn_right():
+#     turn_left()
+#     turn_left()
+#     turn_left()
+#
+# while at_goal() != True:
+#     if front_is_clear():
+#         move()
+#         if front_is_clear() and right_is_clear():
+#             turn_right()
+#             move()
+#     elif right_is_clear():
+#         turn_right()
+#     else:
+#         turn_left()
+
+## GIVEN SOLUTION:
+# while not at_goal():
+#     if right_is_clear:
+#         turn_right()
+#         move()
+#     elif front_is_clear():
+#         move()
+#     else:
+#         turn_left():
+## which is more concise and makes sense when part of the goal was to try to get the robot to follow along the right
+## wall (the wall on the right hand side), and basically make a left turn the last resort.
