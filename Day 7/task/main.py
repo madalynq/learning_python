@@ -4,18 +4,26 @@ word_list = ["aardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
 print(chosen_word)
 
-# TODO-1: Create a "placeholder" with the same number of blanks as the chosen_word
-word_count = len(chosen_word)
-print("_"* word_count)
+placeholder = ""
+word_length = len(chosen_word)
+for position in range(word_length):
+    placeholder += "_"
+print(placeholder)
 
-guess = input("Guess a letter: ").lower()
-
-# TODO-2: Create a "display" that puts the guess letter in the right positions and _ in the rest of the string.
+# TODO-1: - Use a while loop to let the user guess again.
+solved = False
 display = ""
-for letter in chosen_word:
-    if letter == guess:
-        display += guess
-    else:
-        display += "_"
-print(display)
+while not solved:
+    guess = input("Guess a letter: ").lower()
+    for letter in chosen_word:
+        if letter == guess:
+            display += letter
+        else:
+            display += "_"
+    print(display)
+if display.find("_") == -1:
+    print("You Win!")
 
+###attempt 1. for some reason it's adding the outputs together when i guess more than one letter
+# for example if the random word chosen is "aardvark" and I chose a, the output would be "aa___a__"
+# onto the next step, choose another letter, r, and the output currently looks like "aa___a____r___r_"
