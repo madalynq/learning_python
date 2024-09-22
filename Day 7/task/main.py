@@ -1,6 +1,65 @@
 import random
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
 word_list = ["aardvark", "baboon", "camel"]
 
+# TODO-1: - Create a variable called 'lives' to keep track of the number of lives left.
+#  Set 'lives' to equal 6.
+lives = 6
 chosen_word = random.choice(word_list)
 print(chosen_word)
 
@@ -9,44 +68,54 @@ word_length = len(chosen_word)
 for position in range(word_length):
     placeholder += "_"
 print(placeholder)
+print(stages[6])
 
-# TODO-1: - Use a while loop to let the user guess again.
+game_over = False
+correct_letters = []
 
-solved = False
-correct_guess = []
-while not solved:
+while not game_over:
     guess = input("Guess a letter: ").lower()
+
     display = ""
+
     for letter in chosen_word:
         if letter == guess:
             display += letter
-            correct_guess.append(letter)
-        elif letter in correct_guess:
+            correct_letters.append(guess)
+        elif letter in correct_letters:
             display += letter
-        elif letter != guess:
+        else:
             display += "_"
 
 
-
-
     print(display)
-    if display.find("_") == -1:
-        solved = True
-        print("You Win!")
 
-###attempt 1. for some reason it's adding the outputs together when i guess more than one letter
-# for example if the random word chosen is "aardvark" and I chose a, the output would be "aa___a__"
-# onto the next step, choose another letter, r, and the output currently looks like "aa___a____r___r_"
+    # TODO-2: - If guess is not a letter in the chosen_word, Then reduce 'lives' by 1.
+    #  If lives goes down to 0 then the game should stop and it should print "You lose."
+    if guess not in chosen_word:
+        lives -= 1
+        if lives == 0:
+            game_over = True
+            print("You Lose")
+    if "_" not in display:
+        game_over = True
+        print("You win!")
 
+    # TODO-3: - print the ASCII art from 'stages'
+    #  that corresponds to the current number of 'lives' the user has remaining.
 
-## final attempt. couldn't figure it out and watched solution, pausing here and there to see if I could fix myself.
-## the initial problem was that I had the display variable in the wrong place, outside of the while loop. that's why it
-## continued to add to the end of the string "display"
-## the other problem i was trying to fix was the infinite loop, even if i had guessed all the correct letters, it kept
-## asking me to guess. it was an indentation issue, as well as i hadn't changed the variable "solved" to = True
-## though the condition had been met.
-## got stuck trying to figure out how to keep the correct guesses, and I think part of the reason I had a hard time coming up
-## with the idea of creating another list was because stuck in the idea of trying to create a variable within the variable,
-## but couldn't figure out how it would keep it when the loop starts again.
-## also, when i googled how to check if a letter is in a string, i found the variable.find() rather than just using the
-## IN keyword, so in a way I didn't learn how to search in a variable. The concept wasn't even on my radar.
+    if lives == 5:
+        print(stages[5])
+    elif lives == 4:
+        print(stages[4])
+    elif lives == 3:
+        print(stages[3])
+    elif lives == 2:
+        print(stages[2])
+    elif lives == 1:
+        print(stages[1])
+    if lives == 0:
+        print(stages[0])
+
+        ###simpler way to code TODO #:
+        ### print (stages[lives])
