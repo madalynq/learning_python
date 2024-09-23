@@ -22,7 +22,7 @@ correct_letters = []
 
 while not game_over:
 
-    # TODO-6: - Update the code below to tell the user how many lives they have left.
+
     print(f"****************************{lives}/6 LIVES LEFT****************************")
     guess = input("Guess a letter: ").lower()
 
@@ -41,15 +41,12 @@ while not game_over:
         print(f"You've already guessed {guess}.")
     print("Word to guess: " + display)
 
-    # TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
-    #  e.g. You guessed d, that's not in the word. You lose a life.
-
     if guess not in chosen_word:
         lives -= 1
         print(f"You guessed {guess}, that's not in the word. You lose a life.")
         if lives == 0:
             game_over = True
-        print(f"*****Correct Answer Was: {chosen_word.upper()}! ****YOU LOSE**********************")
+            print(f"*****Correct Answer Was: {chosen_word.upper()}! ****YOU LOSE**********************")
     elif guess in display:
         lives += 0
     if "_" not in display:
