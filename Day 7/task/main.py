@@ -1,13 +1,11 @@
 import random
-import hangman_words
-import hangman_art
-
+import hangman_words              ###two ways to import either this and line #5
+from hangman_art import stages, logo    ### or this and skip 5
 hangman_words.word_list
-hangman_art.logo
-hangman_art.stages
+
 lives = 6
 
-print(hangman_art.logo)
+print(logo)
 chosen_word = random.choice(hangman_words.word_list)
 print(chosen_word)
 
@@ -26,19 +24,20 @@ while not game_over:
     print(f"****************************{lives}/6 LIVES LEFT****************************")
     guess = input("Guess a letter: ").lower()
 
-    # TODO-4: - If the user has entered a letter they've already guessed, print the letter and let them know.
+    if guess in correct_letters:
+        print(f"You've already guessed {guess}.")
     display = ""
 
     for letter in chosen_word:
         if letter == guess:
             display += letter
             correct_letters.append(guess)
+
         elif letter in correct_letters:
             display += letter
         elif letter not in correct_letters:
             display += "_"
-    if guess in display:
-        print(f"You've already guessed {guess}.")
+
     print("Word to guess: " + display)
 
     if guess not in chosen_word:
@@ -53,4 +52,4 @@ while not game_over:
         game_over = True
         print("****************************YOU WIN****************************")
 
-    print(hangman_art.stages[lives])
+    print(stages[lives])
