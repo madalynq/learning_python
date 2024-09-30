@@ -13,3 +13,7 @@ greet_with_name("Jack Bauer", "New York")
 
 ##keyword arguments: specify which is which in the function
 greet_with_name(location="New York", name="Jack Bauer")
+
+##love calculator exercise:
+#enter two people's names, take the number of times the letters in TRUE appear in both names, and LOVE.
+#concatonate numbers to get love score
