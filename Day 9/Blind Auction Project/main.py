@@ -21,7 +21,7 @@ def find_highest_bidder(bidding_dictionary):
 
 
 while not repeat:
-    name = input("What is your name? ")
+    name = input("What is your name? ").title()
     bid = int(input("What is your bid? $ "))
     users_dictionary[name] = bid
     others = input("Are there any others who would like to place a bid? (y/n) ")
